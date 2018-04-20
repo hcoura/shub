@@ -4,9 +4,10 @@ import os
 import tempfile
 import shutil
 
+from shub import DEPLOY_DOCS_LINK
 from shub.config import get_target_conf
 from shub.utils import (build_and_deploy_eggs, decompress_egg_files,
-                        download_from_pypi, DEPLOY_DOCS_LINK)
+                        download_from_pypi)
 
 
 HELP = """

@@ -8,6 +8,7 @@ import click
 import six
 import yaml
 
+from shub import DOCS_LINK, CONFIG_DOCS_LINK
 from shub.exceptions import (BadParameterException, BadConfigException,
                              ConfigParseException, MissingAuthException,
                              NotFoundException, ShubDeprecationWarning,
@@ -21,9 +22,6 @@ SH_IMAGES_REGISTRY = 'images.scrapinghub.com'
 SH_IMAGES_REPOSITORY = SH_IMAGES_REGISTRY + '/project/{project}'
 GLOBAL_SCRAPINGHUB_YML_PATH = os.path.expanduser("~/.scrapinghub.yml")
 NETRC_PATH = os.path.expanduser('~/_netrc' if os.name == 'nt' else '~/.netrc')
-
-DOCS_LINK = "https://shub.readthedocs.io"
-CONFIG_DOCS_LINK = DOCS_LINK + "/en/stable/configuration.html"
 
 
 class ShubConfig(object):

@@ -4,12 +4,12 @@ import tempfile
 
 import click
 
-from shub import utils
+from shub import utils, DEPLOY_DOCS_LINK
 from shub.config import get_target_conf
 from shub.exceptions import (BadParameterException, NotFoundException,
                              SubcommandException)
 from shub.utils import (decompress_egg_files, download_from_pypi,
-                        find_executable, run_cmd, DEPLOY_DOCS_LINK)
+                        find_executable, run_cmd)
 
 
 HELP = """
