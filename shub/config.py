@@ -395,8 +395,8 @@ But no worries, shub has automatically migrated your global settings to
 ~/.scrapinghub.yml, and will also automatically migrate your project settings
 when you run a command within a Scrapy project.
 
-Visit {docs_link} for more information on the new
-configuration format and its benefits.
+Visit {docs_link} for more information on the new configuration format and
+its benefits.
 
 Happy scraping!
 -------------------------------------------------------------------------------
