@@ -1,11 +1,13 @@
 from __future__ import absolute_import
+import io
 import os
 from setuptools import setup, find_packages
 
 
 about = {}
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, '', '__init__.py'), 'r', 'utf-8') as f:
+with io.open(os.path.join(here, 'shub', '__init__.py'),
+             mode='r', encoding='utf-8') as f:
     exec(f.read(), about)
 
 
