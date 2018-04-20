@@ -6,7 +6,7 @@ import shutil
 
 from shub.config import get_target_conf
 from shub.utils import (build_and_deploy_eggs, decompress_egg_files,
-                        download_from_pypi)
+                        download_from_pypi, DEPLOY_DOCS_LINK)
 
 
 HELP = """
@@ -34,8 +34,7 @@ SHORT_HELP = "[DEPRECATED] Build and deploy eggs from requirements.txt"
 def cli(target, requirements_file):
     click.secho(
         "deploy-reqs was deprecated, define a requirements file in your "
-        "scrapinghub.yml instead. See "
-        "http://doc.scrapinghub.com/shub.html#deploying-dependencies",
+        "scrapinghub.yml instead. See {}".format(DEPLOY_DOCS_LINK),
         err=True, fg='yellow',
     )
     main(target, requirements_file)

@@ -54,6 +54,10 @@ setup(
     entry_points = {'scrapy': ['settings = %(settings)s']},
 )
 """
+DEPLOY_DOCS_LINK = (
+    "https://shub.readthedocs.io/en/stable/"
+    "deploying.html#deploying-dependencies"
+)
 
 
 @contextlib.contextmanager

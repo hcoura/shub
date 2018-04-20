@@ -6,7 +6,7 @@ setup(
     name='shub',
     version='2.7.0',
     packages=find_packages(exclude=('tests', 'tests.*')),
-    url='http://doc.scrapinghub.com/shub.html',
+    url='https://shub.readthedocs.io',
     description='Scrapinghub Command Line Client',
     long_description=open('README.rst').read(),
     author='Scrapinghub',
