@@ -297,6 +297,9 @@ def decompress_egg_files(directory=None):
         unpack_file = pip.utils.unpack_file
     except AttributeError:
         unpack_file = pip.util.unpack_file
+    # workaround for pip >= 10.0
+    except AttributeError:
+        unpack_file = pip.utils.misc.unpack_file
     pathname = "*"
     if directory is not None:
         pathname = os.path.join(directory, pathname)
