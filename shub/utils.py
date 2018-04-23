@@ -22,6 +22,11 @@ import click
 import pip
 import requests
 import yaml
+# https://github.com/scrapinghub/shub/pull/309#pullrequestreview-113977920
+try:
+    from pip import main as pip_main
+except:
+    from pip._internal import main as pip_main
 
 from scrapinghub import Connection, APIError
 
@@ -604,7 +609,7 @@ def download_from_pypi(dest, pkg=None, reqfile=None, extra_args=None):
     if pip_version >= LooseVersion('8'):
         cmd = 'download'
     with patch_sys_executable():
-        pip.main([cmd, '-d', dest, '--no-deps'] + no_wheel + extra_args +
+        pip_main([cmd, '-d', dest, '--no-deps'] + no_wheel + extra_args +
                  target)
 
 
