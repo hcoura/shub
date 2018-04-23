@@ -343,17 +343,18 @@ class UtilsTest(AssertInvokeRaisesMixin, unittest.TestCase):
         with self.assertRaises(MockException):
             utils.update_available(silent_fail=False)
 
+    @patch('shub.utils.pip_main', autospec=True)
     @patch('shub.utils.pip', autospec=True)
-    def test_download_from_pypi(self, mock_pip):
+    def test_download_from_pypi(self, mock_pip, mock_pip_main):
         def _call(*args, **kwargs):
             utils.download_from_pypi(*args, **kwargs)
-            return mock_pip.main.call_args[0][0]
+            return mock_pip_main.call_args[0][0]
 
         with self.assertRaises(ValueError):
             utils.download_from_pypi('tmpdir')
         with self.assertRaises(ValueError):
             utils.download_from_pypi('tmpdir', pkg='shub', reqfile='req.txt')
-        self.assertFalse(mock_pip.main.called)
+        self.assertFalse(mock_pip_main.called)
 
         # 1.0 (Ubuntu Precise)
         del mock_pip.__version__
